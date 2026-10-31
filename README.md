@@ -30,10 +30,28 @@ Run the smoke tests:
 python -m unittest discover -s tests -v
 ```
 
+## Five real-world examples
+
+The test suite includes five realistic customer-feedback examples:
+
+1. Grocery delivery arrived early and the items were fresh — **positive**.
+2. A banking app made it easy to freeze a card — **positive**.
+3. A train was cancelled without warning and support did not reply — **negative**.
+4. Headphones stopped charging and the replacement process was frustrating — **negative**.
+5. A hotel room was clean, quiet, and accurately described — **positive**.
+
+You can classify several examples in one command:
+
+```bash
+python -m src.sentiment_classifier \
+  "The grocery delivery arrived early and every item was fresh" \
+  "My train was cancelled with no warning and support never replied"
+```
+
 ## Project layout
 
 - `src/sentiment_classifier.py` — training data, model pipeline, and CLI.
-- `tests/test_sentiment_classifier.py` — basic prediction tests.
+- `tests/test_sentiment_classifier.py` — basic tests plus five real-world examples.
 - `requirements.txt` — pinned runtime dependency.
 
 ## Limitations
